@@ -1,7 +1,7 @@
 <?php
 
 //ouverture d'une connexion a la base de donnée mots meles
-$objetPdo = new PDO('mysql:host=localhost:3307;dbname=mots_meles','root','');
+$objetPdo = new PDO('mysql:host=db;dbname=mots_meles','solene','solene');
 
 //Préparation de la requête
 $pdoStat = $objetPdo->prepare('UPDATE players set lastname=:lastname, firstname=:firstname, age=:age, mdp=:mdp WHERE id=:num LIMIT 1');

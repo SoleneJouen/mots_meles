@@ -1,10 +1,10 @@
 <?php
 
 //ouverture d'une connexion a la base de donnée mots meles
-$objetPdo = new PDO('mysql:host=localhost:3307;dbname=mots_meles','root','');
+$objetPdo = new PDO('mysql:host=db;dbname=mots_meles','solene','solene');
 
 //Préparation de la requête
-$pdoStat = $objetPdo->prepare('DELETE FROM topics WHERE id=:num LIMIT 1');
+$pdoStat = $objetPdo->prepare('DELETE FROM players WHERE id=:num LIMIT 1');
 
 //Liaison du paramètre nommé
 $pdoStat->bindValue(':num', $_GET['numContact'], PDO::PARAM_INT);
@@ -14,11 +14,11 @@ $executeIsOk = $pdoStat->execute();
 
 if($executeIsOk){
     session_start();
-    $_SESSION["message"] = 'Le thème a été supprimé';
-    header('Location: http://localhost/mots_meles/mots_meles/lister_topic.php');
+    $_SESSION["message"] = 'Le joueur a été supprimé';
+    header('Location: http://localhost/mots_meles/mots_meles/lister_player.php');
     die();
 }else{
-    $message = 'Échec de la suppression du thème';
+    $message = 'Échec de la suppression du joueur';
 }
 ?>
 

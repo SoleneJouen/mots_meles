@@ -5,7 +5,8 @@ if(!isset($_SESSION['firstname'])){
 }
 
 // Connexion à la base de données
-$pdo = new PDO('mysql:host=localhost:3307;dbname=mots_meles', 'root', '');
+$pdo = new PDO('mysql:host=db;dbname=mots_meles','solene','solene');
+
 
 // Fonction pour récupérer un thème aléatoire depuis la base de données
 function getThemeAleatoire($pdo) {

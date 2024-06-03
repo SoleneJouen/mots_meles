@@ -1,7 +1,7 @@
 <?php
 
 //ouverture d'une connexion a la base de donnée mots meles
-$objetPdo = new PDO('mysql:host=localhost:3307;dbname=mots_meles','root','');
+$objetPdo = new PDO('mysql:host=db;dbname=mots_meles','solene','solene');
 
 $pdoStat = $objetPdo->prepare('SELECT * FROM players WHERE id = :num');
 $pdoStat->bindValue(':num', $_GET['numContact'], PDO::PARAM_INT);

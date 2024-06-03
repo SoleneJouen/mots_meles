@@ -1,7 +1,7 @@
 <?php
 
 //ouverture d'une connexion a la base de donnée contact
-$objetPdo = new PDO('mysql:host=localhost:3307;dbname=mots_meles','root','');
+$objetPdo = new PDO('mysql:host=db;dbname=mots_meles','solene','solene');
 
 //Préparation de la requête d'insertion (SQL)
 $pdoStat = $objetPdo->prepare('INSERT INTO players VALUES(NULL, :lastname, :firstname, :age, :mdp)');

@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if (isset($_SESSION["message"]) && !empty($_SESSION["message"])) {
+    echo $_SESSION["message"];
+    $_SESSION["message"] = "";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,13 +30,5 @@
             <button type="submit" value="Enregistrer">Enregistrer</button>
         </p>
     </form>
-
-<?php
-    session_start();
-    if (isset($_SESSION["message"]) && !empty($_SESSION["message"])) {
-    echo $_SESSION["message"];
-    $_SESSION["message"] = "";
-}
-?>
 </body>
 </html>

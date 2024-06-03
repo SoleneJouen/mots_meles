@@ -1,7 +1,14 @@
+<?php 
+session_start();
+if (isset($_SESSION["message"]) && !empty($_SESSION["message"])) {
+    echo $_SESSION["message"];
+    $_SESSION["message"] = "";
+}
+?>
 <?php
 
 //ouverture d'une connexion a la base de donnée mots meles
-$objetPdo = new PDO('mysql:host=localhost:3307;dbname=mots_meles','root','');
+$objetPdo = new PDO('mysql:host=db;dbname=mots_meles','solene','solene');
 
 //Préparation de la requête
 $pdoStat = $objetPdo->prepare('SELECT * FROM players');
@@ -41,13 +48,6 @@ $contacts = $pdoStat->fetchAll();
             </table>
         <?php endforeach ?>
     </ul>
-    
-<?php 
-session_start();
-if (isset($_SESSION["message"]) && !empty($_SESSION["message"])) {
-    echo $_SESSION["message"];
-    $_SESSION["message"] = "";
-}
-?>
+
 </body>
 </html>
