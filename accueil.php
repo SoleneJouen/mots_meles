@@ -18,7 +18,7 @@
         <button><a href="lister_player.php">Liste player</a></button>
         <button><a href="topic.php">Topic</a></button>
         <button><a href="lister_topic.php">Liste topic</a></button>
-        <button><a href="home.php">Home</a></button>
+        <button><a href="home.php">Game</a></button>
     </header>
     <main>
         <h1>Mots mélés</h1>
